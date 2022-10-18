@@ -1,0 +1,22 @@
+name: Main Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_NAME }}
+        username: ${{ secrets.HOST_USER }}
+        password: ${{ secrets.HOST_PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: | 
+                cd portfolio.acairo.com
+                git restore .
+                git pull https://github.com/Ibrahim-Eldwek/Portfolio.git main
