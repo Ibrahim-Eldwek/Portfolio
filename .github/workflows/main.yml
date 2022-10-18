@@ -17,6 +17,6 @@ jobs:
         password: ${{ secrets.HOST_PASSWORD }}
         port: ${{ secrets.PORT }}
         script: | 
-                cd portfolio.acairo.com/portfolio/Ibrahim-Eldwek
+                cd portfolio.acairo.com/portfolio/ibrahim-eldwek
                 git restore .
                 git pull https://github.com/Ibrahim-Eldwek/Portfolio.git main
